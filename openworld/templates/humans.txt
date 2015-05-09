@@ -19,5 +19,5 @@ Name:
 /* SITE */                            
 Last update: $Date$                   
 Standards: HTML5, CSS3,..    
-Components: Modernizr, jQuery, etc.   
+Components: Modernizr, jQuery, Django
 Software: Software used for the development
