@@ -1,4 +1,0 @@
-openworld
-=========
-
-my homepage
