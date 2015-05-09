@@ -3,6 +3,7 @@ from cms.sitemaps import CMSSitemap
 from django.conf.urls import *  # NOQA
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic.base import TemplateView
 from django.contrib import admin
 from django.conf import settings
 
@@ -12,6 +13,8 @@ urlpatterns = i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
+    url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    url(r'^humans\.txt', TemplateView.as_view(template_name='humans.txt', content_type='text/plain')),
     url(r'^select2/', include('django_select2.urls')),
     url(r'^', include('cms.urls')),
 )
